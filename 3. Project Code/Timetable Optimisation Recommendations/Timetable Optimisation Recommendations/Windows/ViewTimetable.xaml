@@ -1,0 +1,73 @@
+﻿<!--
+    Copyright (c) Jonathan Foot. All Rights Reserved.
+    See the LICENSE file in the project root for more information.
+    Private and confidential until the date of 18/06/2021
+-->
+<Window
+    x:Class="Timetable_Optimisation_Recommendations.Windows.ViewTimetable"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Timetable_Optimisation_Recommendations.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="ViewTimetable"
+    Width="800"
+    Height="450"
+    Loaded="WindowLoadedAsync"
+    mc:Ignorable="d">
+    <Grid>
+        <TabControl Margin="0,38,0,0">
+            <TabItem Header="Outbound">
+                <Grid>
+
+                    <DataGrid
+                        x:Name="TimeTableGridOutBound"
+                        AutoGenerateColumns="True"
+                        CanUserAddRows="false"
+                        CanUserDeleteRows="False"
+                        CanUserReorderColumns="False"
+                        CanUserSortColumns="False"
+                        Cursor="Hand"
+                        HorizontalScrollBarVisibility="Auto"
+                        IsReadOnly="True"
+                        ItemsSource="{Binding}"
+                        SelectionMode="Single"
+                        SelectionUnit="FullRow"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Inbound">
+                <Grid>
+
+                    <DataGrid
+                        x:Name="TimeTableGridInBound"
+                        AutoGenerateColumns="True"
+                        CanUserAddRows="false"
+                        CanUserDeleteRows="False"
+                        CanUserReorderColumns="False"
+                        CanUserSortColumns="False"
+                        Cursor="Hand"
+                        HorizontalScrollBarVisibility="Auto"
+                        IsReadOnly="True"
+                        ItemsSource="{Binding}"
+                        SelectionMode="Single"
+                        SelectionUnit="FullRow"
+                        VerticalScrollBarVisibility="Auto" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Label
+            Margin="127,36,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Headings display Journey Code ID"
+            FontSize="12" />
+        <Label
+            x:Name="ServiceTitle"
+            Margin="10,7,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Label"
+            FontSize="16" />
+    </Grid>
+</Window>

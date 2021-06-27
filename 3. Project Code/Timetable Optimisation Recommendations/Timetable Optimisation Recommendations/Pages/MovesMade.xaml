@@ -1,0 +1,49 @@
+﻿<!--
+    Copyright (c) Jonathan Foot. All Rights Reserved.
+    See the LICENSE file in the project root for more information.
+    Private and confidential until the date of 18/06/2021
+-->
+<Page
+    x:Class="Timetable_Optimisation_Recommendations.Pages.MovesMade"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Timetable_Optimisation_Recommendations.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MovesMade"
+    d:DesignHeight="421.2"
+    d:DesignWidth="641.6"
+    Loaded="LoadedUp"
+    mc:Ignorable="d">
+
+    <Grid>
+        <TextBox
+            x:Name="MovesMadeTxt"
+            Margin="10,94,10,10"
+            IsReadOnly="True"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+        <Label
+            Margin="0,10,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Moves Made Summary"
+            FontSize="22" />
+        <TextBlock
+            Height="34"
+            Margin="0,52,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            FontSize="14"
+            Text="Below shows all of the moves made by the search algorithm in order, each move is additive to the previous. Only the best solution is displayed."
+            TextWrapping="WrapWithOverflow" />
+        <Button
+            Width="109"
+            Height="33"
+            Margin="0,8,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Click="ReturnClick"
+            Content="Return" />
+    </Grid>
+</Page>

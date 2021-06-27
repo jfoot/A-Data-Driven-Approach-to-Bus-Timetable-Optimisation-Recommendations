@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>ReadingBuses_API_Tests</RootNamespace>
+
+    <IsPackable>false</IsPackable>
+
+    <Configurations>Debug;Release;Release-3.1</Configurations>
+
+    <Authors>Jonathan Foot</Authors>
+
+    <Company>Jonathan Foot</Company>
+
+    <Product>Reading Buses API Tests</Product>
+
+    <Copyright>Jonathan Foot © 2020</Copyright>
+
+    <NeutralLanguage>en-GB</NeutralLanguage>
+
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.9.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReadingBusesAPI\ReadingBusesAPI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+
+</Project>

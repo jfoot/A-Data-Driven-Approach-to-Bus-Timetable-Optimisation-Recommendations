@@ -1,0 +1,93 @@
+﻿<!--
+    Copyright (c) Jonathan Foot. All Rights Reserved.
+    See the LICENSE file in the project root for more information.
+    Private and confidential until the date of 18/06/2021
+-->
+<Page
+    x:Class="Timetable_Optimisation_Recommendations.Pages.Evaluator"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Timetable_Optimisation_Recommendations.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Evaluator"
+    d:DesignHeight="297.2"
+    d:DesignWidth="586"
+    Loaded="LoadedUpAsync"
+    mc:Ignorable="d">
+
+    <Grid>
+
+        <ProgressBar
+            Height="24"
+            Margin="10,65,10,0"
+            VerticalAlignment="Top"
+            Value="{Binding Path=Reporter.Value, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+
+        <ProgressBar
+            Height="24"
+            Margin="10,97,10,0"
+            VerticalAlignment="Top"
+            Value="{Binding Reporter.SubValue, RelativeSource={RelativeSource AncestorType={x:Type Page}}}" />
+
+
+
+        <TextBox
+            x:Name="loadingText"
+            Margin="10,131,10,10"
+            IsReadOnly="True"
+            Text="{Binding Path=Reporter.Message, RelativeSource={RelativeSource AncestorType={x:Type Page}}}"
+            TextWrapping="Wrap"
+            VerticalScrollBarVisibility="Visible" />
+        <Label
+            x:Name="Iteration"
+            Width="380"
+            Height="48"
+            Margin="10,2,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="ITERATION"
+            FontSize="22" />
+        <Label
+            x:Name="Stage"
+            Width="372"
+            Height="48"
+            Margin="0,2,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Right"
+            Content="{Binding Path=Reporter.Stage, RelativeSource={RelativeSource AncestorType={x:Type Page}}, FallbackValue=STAGE}"
+            FontSize="22" />
+        <Label
+            x:Name="Score"
+            Width="380"
+            Height="48"
+            Margin="0,2,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            Content="SCORE"
+            FontSize="22" />
+        <Label
+            Width="380"
+            Height="25"
+            Margin="0,35,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            HorizontalContentAlignment="Center"
+            Content="The lower the score the better!"
+            FontSize="14" />
+        <Button
+            x:Name="StopButton"
+            Width="226"
+            Height="50"
+            Margin="0,200,0,20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Click="stop_Click"
+            Content="Stop Early"
+            FontSize="16"
+            FontWeight="Bold" />
+
+    </Grid>
+</Page>

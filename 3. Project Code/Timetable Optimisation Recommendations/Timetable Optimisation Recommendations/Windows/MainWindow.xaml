@@ -1,0 +1,22 @@
+﻿<!--
+    Copyright (c) Jonathan Foot. All Rights Reserved.
+    See the LICENSE file in the project root for more information.
+    Private and confidential until the date of 18/06/2021
+-->
+<NavigationWindow
+    x:Class="Timetable_Optimisation_Recommendations.Windows.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    MinWidth="800"
+    MinHeight="450"
+    Source="/Pages/MainPage.xaml"
+    mc:Ignorable="d">
+    <NavigationWindow.TaskbarItemInfo>
+        <TaskbarItemInfo Description="Application Progress Indicator" ProgressState="Normal" />
+    </NavigationWindow.TaskbarItemInfo>
+</NavigationWindow>

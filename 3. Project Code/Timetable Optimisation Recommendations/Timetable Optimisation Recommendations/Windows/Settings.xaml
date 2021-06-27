@@ -1,0 +1,197 @@
+﻿<!--
+    Copyright (c) Jonathan Foot. All Rights Reserved.
+    See the LICENSE file in the project root for more information.
+    Private and confidential until the date of 18/06/2021
+-->
+<Window
+    x:Class="Timetable_Optimisation_Recommendations.Windows.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Timetable_Optimisation_Recommendations.Windows"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Settings"
+    Width="536"
+    Height="458"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <TextBox
+            x:Name="ApiKey"
+            Width="142"
+            Height="23"
+            Margin="248,54,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text=""
+            TextWrapping="Wrap"
+            ToolTip="The API Key for the bus operator of choice." />
+        <Label
+            Margin="186,51,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="API Key"
+            FontSize="14" />
+        <TextBox
+            x:Name="IterationLimit"
+            Width="142"
+            Height="23"
+            Margin="248,88,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="IsTextNumerical"
+            Text=""
+            TextWrapping="Wrap"
+            ToolTip="The maximum number of iterations the search algorithm will complete." />
+        <Label
+            Margin="146,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Iteration Limit"
+            FontSize="14" />
+        <Label
+            Margin="56,120,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Service Cohesion Dominance"
+            FontSize="14" />
+        <Label
+            Margin="98,154,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="SlackTime Dominance"
+            FontSize="14" />
+        <TextBox
+            x:Name="SegmentMinLength"
+            Width="142"
+            Height="23"
+            Margin="248,189,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="IsTextNumerical"
+            Text=""
+            TextWrapping="Wrap"
+            ToolTip="The minimum number of stops two services must follow together for them to be considered a shared route-segment. Must be greater than or equal to 2." />
+        <Label
+            Margin="26,186,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Route-Segment Minimum Length"
+            FontSize="14" />
+        <RadioButton
+            x:Name="TrueWeak"
+            Margin="280,330,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="True"
+            GroupName="weakStop"
+            ToolTip="Use historical service timetable data to build the stop data. (Quicker and in most cases the same as false)" />
+        <RadioButton
+            x:Name="FalseWeak"
+            Margin="335,330,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="False"
+            GroupName="weakStop"
+            ToolTip="Actually call upon the API for stop information, much slower, but might give more data." />
+        <Label
+            Margin="115,324,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Use Weak-Stop Data?"
+            FontSize="14" />
+        <Button
+            Width="170"
+            Height="42"
+            Margin="181,365,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="SaveClick"
+            Content="Save and Close" />
+        <Label
+            Margin="0,10,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Settings"
+            FontSize="20" />
+        <Slider
+            x:Name="CohesionDominance"
+            Width="140"
+            Margin="250,125,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Maximum="5"
+            Minimum="0"
+            ToolTip="The importance to place upon inter-service cohesion at shared route-segments, if this slider is greater than the slack time slider more importance is applied." />
+        <Slider
+            x:Name="SlackDominance"
+            Width="140"
+            Margin="249,158,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Maximum="5"
+            Minimum="0"
+            ToolTip="The importance to place upon slack and travel time improvements, if this slider is greater than the cohesion slider more weighting is applied." />
+        <Button
+            Width="121"
+            Height="37"
+            Margin="29,365,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="Reset"
+            Content="Reset To Defaults" />
+        <TextBox
+            x:Name="TabuTenure"
+            Width="142"
+            Height="23"
+            Margin="248,222,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="IsTextNumerical"
+            Text=""
+            TextWrapping="Wrap"
+            ToolTip="The number of iterations a move is considered tabu for." />
+        <Label
+            Margin="155,220,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Tabu Tenure"
+            FontSize="14" />
+        <TextBox
+            x:Name="NeighborhoodSize"
+            Width="142"
+            Height="23"
+            Margin="247,256,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="IsTextNumerical"
+            Text=""
+            TextWrapping="Wrap"
+            ToolTip="The size of the neighbourhood, this should be a number greater than or equal to one and the candidate list." />
+        <Label
+            Margin="102,253,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Neighbourhood Size"
+            FontSize="14" />
+        <TextBox
+            x:Name="CanadiateList"
+            Width="142"
+            Height="23"
+            Margin="247,290,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            PreviewTextInput="IsTextNumerical"
+            Text=""
+            TextWrapping="Wrap"
+            ToolTip="The size of the candidate list, this should be a number greater than or equal to 1, but less than or equal to the neighbourhood size." />
+        <Label
+            Margin="110,287,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Candidate List Size"
+            FontSize="14" />
+
+    </Grid>
+</Window>
