@@ -10,7 +10,7 @@ The following GitHub repo contains all of the work I completed for my third-year
 3. Maximise the uniform distribution of different services arriving at the same stop, by spreading out headway times. This requires identifying routes that share a common route-segment.
     * Preventing bunches of buses turning up at a stop a specific times of the day. When all services share a route-segment. 
 
-The search algorithm is implimented using Tabu-Search with Squeaky Wheel Optimisation for a more targeted approach to the search space. The code is written in C# .NET 5. 
+The search algorithm is implimented using Tabu-Search with Squeaky Wheel Optimisation for a more targeted approach to the search space. The code is written in C# .NET 5. For [more information, please see my website](https://www.jonathanfoot.com/Dissertation.html)
 
 
 ## Abstract 
