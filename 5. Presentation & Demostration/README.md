@@ -1,1 +1,2 @@
-# UG-Dissertation
+# Presnetation 
+After completing my dissertation I had to perform a 10min presentation and 5min question and answer session about my work. Below shows that presentation, the animations/transitions. Some images have been changed due to copyright reasons. In addation, I also had to produce a 3min video to briefly explain the optimisation criteria of the project and demonstrates the program running and operational. This can be viewed on [YouTube here](https://www.youtube.com/watch?v=856MWcHd2MI)
