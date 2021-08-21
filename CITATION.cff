@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Foot"
+  given-names: "Jonathan"
+title: "A Data-Driven Approach to Bus Timetable Optimisation Recommendations"
+version: 1.0.0
+date-released: 2021-05-04
+url: "https://github.com/jfoot/A-Data-Driven-Approach-to-Bus-Timetable-Optimisation-Recommendations"
